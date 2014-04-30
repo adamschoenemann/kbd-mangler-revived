@@ -1,0 +1,1 @@
+I'm trying to migrate to linux, but I miss AutoHotkey oh so dearly. I found kbd-mangler, which gives low-level access to keyboard and mouse events, so I am trying to use this to create an AHK-like experience.

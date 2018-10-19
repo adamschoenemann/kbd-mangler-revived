@@ -97,9 +97,9 @@ js_time(JSContext *cx, JSObject *obj, uintN argc, jsval *argv, jsval *rval)
 	long long lm;
 	struct timeval tv;
 	gettimeofday(&tv, NULL);
-	
+
 	millis = (long long)tv.tv_sec * 1000 + tv.tv_usec / 1000;
-	
+
 	return JS_NewDoubleValue(cx, millis, rval);
 }
 
@@ -119,9 +119,9 @@ js_log(JSContext *cx, JSObject *obj, uintN argc, jsval *argv, jsval *rval)
 static JSBool
 js_emit(JSContext *cx, JSObject *obj, uintN argc, jsval *argv, jsval *rval)
 {
-	int32 type;
-	int32 code;
-	int32 value;
+	int type;
+	int code;
+	int value;
 
     if (!JS_ValueToInt32(cx, argv[0], &type))
 	{
@@ -384,7 +384,7 @@ BOOL InitScripting(char *main_script_path)
 	}
 	*/
 
-	
+
 	src = read_script(main_script_path);
 	if (src)
 	{

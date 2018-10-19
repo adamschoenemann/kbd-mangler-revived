@@ -6,9 +6,9 @@
 #include <fcntl.h>
 #include <getopt.h>
 
-#include <sys/time.h> 
-#include <sys/types.h> 
-#include <sys/ioctl.h> 
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/ioctl.h>
 
 #include <linux/input.h>
 #include <linux/uinput.h>
@@ -76,7 +76,7 @@ void init_uinput(char *file) {
 	{
 		fprintf(stderr, "error at line %d: %s\n",
 		__LINE__, strerror(errno));
-	
+
 	}
 	for (i = 1; i < KEY_UNKNOWN; i++)
 	{
@@ -166,7 +166,7 @@ void main_loop() {
 		}
 
 		res = select(nfds, &read_fds, NULL, NULL, &timeout);
-	
+
 		if (res == -1) {
 			fprintf(stderr, "select() failed: %s\n", strerror(errno));
 			exit(1);
@@ -175,7 +175,7 @@ void main_loop() {
 		if (res == 0) {
 			// TODO: maybe pass womething usefull in code/value
 			ProcessEvent(EV_TIMER, ev.code, ev.value);
-			continue;	
+			continue;
 		}
 
 		for (i = 0; i < input_count; i++) {
@@ -267,7 +267,7 @@ int main(int argc, char **argv)
 
 			case 'I':
 				add_include_path(optarg);
-				break;	
+				break;
 
 			case '?':
 				break;

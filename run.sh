@@ -25,6 +25,9 @@ UINPUT_DEV=/dev/uinput
 # find out directory where this script resides
 DIR=$(cd $(dirname "$0"); pwd)
 
+# kill existing instances
+pkill kbd-mangler
+
 sleep 1 # against initial ENTER key hanging when starting this script from shell
 
 echo Starting kbd-mangler...

@@ -1,9 +1,10 @@
 # kbd-mangler revived
 
-I'm trying to migrate to linux, but I miss AutoHotkey oh so dearly.
-I found [kbd-mangler][1], which gives low-level access to keyboard and mouse events, so I am trying to use this to create an AHK-like experience, or at least recover my keybindings.
+After using Windows for some time I've got accustomed to having weird vim-like hotkeys using AutoHotkey.
+I've not found a satisfactory solution for Linux until I stumbed across [kbd-mangler][1].
+`kbd-mangler` gives low-level access to keyboard and mouse events, so I am trying to use this to create an AHK-like experience, or at least recover my keybindings.
 The problem with kbd-mangler is that it is from 2010 and thus quite old. It depends on mozillas's js library `libmozjs` which has been deprecated long ago.
-However, one can get the required c library from older releases `xul-runner`.
+However, one can get the required c library from older releases of `xul-runner`.
 In 2010, they didn't build `xul-runner` for x64 when doing stable releases, but they did on nightlies!
 So here is a guide on how to build `kbd-mangler` and get going with writing your own system-wide hotkeys!
 

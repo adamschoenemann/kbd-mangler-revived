@@ -11,7 +11,7 @@ NOTE: I did not write most of this code myself; this is just a small repackaging
 
 # Installation
 - `git clone` this repository down.
-- download the appropriate version of xulrunner [from here][2]
+- download the appropriate version of xulrunner [from here][2] **(remember to download the sdk version)**
 - extract the zip archive you just downloaded to wherever you'd like: I've used `opt/xulrunner-sdk-1.9.2.1pre`
 - modify the `Makefile` to make `LDFLAGS` and `CFLAGS` point to the location of the xulrunner sdk.
 - run `make` in the repo directory

@@ -17,6 +17,7 @@ NOTE: I did not write most of this code myself; this is just a small repackaging
 - run `make` in the repo directory
 - `kbd-mangler` should be built successfully!
 - inspect `run.sh` and follow the instructions in there to find your keyboard device file
+  - remember to edit the `export LD_LIBRARY_PATH` line as to point to your xulrunner sdk folder (same as for `LDFLAGS`)
 - use `sudo ./run.sh [YOUR_SCRIPT_FILE]` to make the magic appear!
 - in `adam/` there are some inspirational scripts -- specifically the `ahk.js` file is what I personally use.
 

@@ -20,7 +20,7 @@ NOTE: I did not write most of this code myself; this is just a small repackaging
 - inspect `run.sh` and follow the instructions in there to find your keyboard device file
   - remember to edit the `export LD_LIBRARY_PATH` line as to point to your xulrunner sdk folder (same as for `LDFLAGS`)
 - use `sudo ./run.sh [YOUR_SCRIPT_FILE]` to make the magic appear!
-- in `adam/` there are some inspirational scripts -- specifically the `ahk.js` file is what I personally use.
+- in `adam/` and `examples/` there are some inspirational scripts -- specifically the `adam/ahk.js` file is what I personally use.
 
 # Run on login
 Since `run.sh` will need to be run with `sudo`, you need to allow your user to run it as root with no password.

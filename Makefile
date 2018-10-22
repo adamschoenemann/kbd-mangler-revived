@@ -19,6 +19,7 @@ CFLAGS = -I/opt/xulrunner-sdk-1.9.2.14pre/include -DXP_UNIX
 all : $(TARGET)
 
 $(TARGET) : $(OBJECTS)
+	mkdir bin
 	gcc $(OBJECTS) $(LDFLAGS) -o $(TARGET)
 
 main.o : main.c
@@ -28,4 +29,5 @@ scripting.o : scripting.c scripting.h
 
 clean :
 	rm -rf $(OBJECTS) $(TARGET)
+	rm -rf bin
 

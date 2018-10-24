@@ -189,11 +189,19 @@ function process(ev)
   }
 }
 
+function printPressed(pressed) {
+  log("pressed")
+  for (k in pressed) {
+    if (pressed[k])
+      log(k + ": " + pressed[k]);
+  }
+  log("")
+}
+
 /*
  * Process a key and thereby updating the [pressed] object
  */
-function processKey(key)
-{
+function processKey(key) {
   if(key.value == 1)
   {
     pressed[key.code] = true;
@@ -201,7 +209,10 @@ function processKey(key)
   else if(key.value == 0)
   {
     pressed[key.code] = false;
+    emitKey(key.code, key.value);
+    return;
   }
+  // printPressed(pressed);
 
   // find out if the current set of pressd keys match a rule
   var matched = findMatchingRules(pressed, rules);

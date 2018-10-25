@@ -13,7 +13,8 @@ var pressed = {};
 //  action: number[] | (keys: number[]) => number[]
 // }
 var rules = [
-  { label: "no_capslock", keys: [KEY_CAPSLOCK], action: [] },
+  { label: "no capslock", keys: [KEY_CAPSLOCK], action: [] },
+  { label: "no capslock and space", keys: [KEY_CAPSLOCK, KEY_SPACE], action: [] },
 
   {
     label: "newline above",
@@ -95,17 +96,17 @@ var rules = [
   },
   {
     label: "keypad_1",
-    keys: [KEY_CAPSLOCK, KEY_SPACE, KEY_U],
+    keys: [KEY_CAPSLOCK, KEY_SPACE, KEY_M],
     action: [KEY_1]
   },
   {
     label: "keypad_2",
-    keys: [KEY_CAPSLOCK, KEY_SPACE, KEY_I],
+    keys: [KEY_CAPSLOCK, KEY_SPACE, KEY_COMMA],
     action: [KEY_2]
   },
   {
     label: "keypad_3",
-    keys: [KEY_CAPSLOCK, KEY_SPACE, KEY_O],
+    keys: [KEY_CAPSLOCK, KEY_SPACE, KEY_DOT],
     action: [KEY_3]
   },
   {
@@ -125,17 +126,17 @@ var rules = [
   },
   {
     label: "keypad_7",
-    keys: [KEY_CAPSLOCK, KEY_SPACE, KEY_M],
+    keys: [KEY_CAPSLOCK, KEY_SPACE, KEY_U],
     action: [KEY_7]
   },
   {
     label: "keypad_8",
-    keys: [KEY_CAPSLOCK, KEY_SPACE, KEY_COMMA],
+    keys: [KEY_CAPSLOCK, KEY_SPACE, KEY_I],
     action: [KEY_8]
   },
   {
     label: "keypad_9",
-    keys: [KEY_CAPSLOCK, KEY_SPACE, KEY_DOT],
+    keys: [KEY_CAPSLOCK, KEY_SPACE, KEY_O],
     action: [KEY_9]
   },
   {
@@ -212,10 +213,10 @@ function processKey(key) {
     emitKey(key.code, key.value);
     return;
   }
-  // printPressed(pressed);
+  printPressed(pressed);
 
   // find out if the current set of pressd keys match a rule
-  var matched = findMatchingRules(pressed, rules);
+  var matched = findMatchingRules(pressed, key, rules);
 
   // if not, we simply re-emit it
   if(matched.length == 0)
@@ -228,7 +229,7 @@ function processKey(key) {
   key.cancel = true;
 
   // now to find out which of the matched rules to execute.
-  // one option would be to execute all matching rules, but this rarely
+  // one option would be to execute all matching rules, but this is rarely
   // what we want.
   // instead, let's execute the matched rules with most required keys, i.e.
   // the most specific rule
@@ -261,7 +262,7 @@ function processKey(key) {
 /*
  * returns a list of matched rules determined by the set of pressed keys
 */
-function findMatchingRules(pressed, rules)
+function findMatchingRules(pressed, lastPressedKey, rules)
 {
   var result = [];
   for(var i = 0; i < rules.length; i++)
@@ -269,9 +270,12 @@ function findMatchingRules(pressed, rules)
     rule = rules[i];
 
     var down = 0;
+    var hasLastPressed = false;
     for(var j = 0; j < rule.keys.length; j++)
     {
       key = rule.keys[j];
+      if (key == lastPressedKey.code)
+        hasLastPressed = true;
       if(pressed[key] == undefined || pressed[key] == false)
         break;
 
@@ -279,7 +283,7 @@ function findMatchingRules(pressed, rules)
 
     }
 
-    if(down == rule.keys.length)
+    if(down == rule.keys.length && hasLastPressed)
     {
       result.push(rule);
     }

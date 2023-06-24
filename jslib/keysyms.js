@@ -6,32 +6,32 @@ __KEYSYMS__ = 1;
 
 EV_SYN                 = 0x00;
 EV_KEY                 = 0x01;
-EV_REL                 = 0x02;    
-EV_ABS                 = 0x03;    
-EV_MSC                 = 0x04;    
-EV_SW                  = 0x05;    
-EV_LED                 = 0x11;    
-EV_SND                 = 0x12;    
-EV_REP                 = 0x14;    
-EV_FF                  = 0x15;    
-EV_PWR                 = 0x16;    
-EV_FF_STATUS           = 0x17;    
-EV_MAX                 = 0x1f; 
+EV_REL                 = 0x02;
+EV_ABS                 = 0x03;
+EV_MSC                 = 0x04;
+EV_SW                  = 0x05;
+EV_LED                 = 0x11;
+EV_SND                 = 0x12;
+EV_REP                 = 0x14;
+EV_FF                  = 0x15;
+EV_PWR                 = 0x16;
+EV_FF_STATUS           = 0x17;
+EV_MAX                 = 0x1f;
 
 /* this one is NOT a system event type, it is emitted 'artificially' by kbd-mangler */
 EV_TIMER = 0x20
 
 REL_X                  = 0x00;
-REL_Y                  = 0x01;    
-REL_Z                  = 0x02;    
-REL_RX                 = 0x03;    
-REL_RY                 = 0x04;    
-REL_RZ                 = 0x05;    
-REL_HWHEEL             = 0x06;    
-REL_DIAL               = 0x07;    
-REL_WHEEL              = 0x08;    
-REL_MISC               = 0x09;    
-REL_MAX                = 0x0f; 
+REL_Y                  = 0x01;
+REL_Z                  = 0x02;
+REL_RX                 = 0x03;
+REL_RY                 = 0x04;
+REL_RZ                 = 0x05;
+REL_HWHEEL             = 0x06;
+REL_DIAL               = 0x07;
+REL_WHEEL              = 0x08;
+REL_MISC               = 0x09;
+REL_MAX                = 0x0f;
 
 BTN_MOUSE              = 0x110;
 BTN_LEFT               = 0x110;

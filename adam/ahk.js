@@ -163,8 +163,37 @@ var rules = [
     label: "tilde",
     keys: [KEY_CAPSLOCK, KEY_N],
     action: [KEY_RIGHTALT, KEY_RIGHTBRACE, KEY_RIGHTBRACE]
+  },
+  {
+    label: "left angle bracket 1",
+    keys: [KEY_RIGHTALT, KEY_Z],
+    action: [KEY_RIGHTALT, KEY_LEFTSHIFT, KEY_Z]
+  },
+  {
+    label: "right angle bracket 1",
+    keys: [KEY_RIGHTALT, KEY_X],
+    action: [KEY_RIGHTALT, KEY_LEFTSHIFT, KEY_X]
+  },
+  {
+    label: "left angle bracket 2",
+    keys: [KEY_CAPSLOCK, KEY_COMMA],
+    action: [KEY_RIGHTALT, KEY_LEFTSHIFT, KEY_Z]
+  },
+  {
+    label: "right angle bracket 2",
+    keys: [KEY_CAPSLOCK, KEY_DOT],
+    action: [KEY_RIGHTALT, KEY_LEFTSHIFT, KEY_X]
+  },
+  {
+    label: "single quote",
+    keys: [KEY_CAPSLOCK, KEY_APOSTROPHE],
+    action: [KEY_BACKSLASH]
+  },
+  {
+    label: "single quote",
+    keys: [KEY_CAPSLOCK, KEY_LEFTSHIFT, KEY_APOSTROPHE],
+    action: [KEY_LEFTSHIFT, KEY_BACKSLASH]
   }
-
 ];
 
 /* Helper function to emit a key */
